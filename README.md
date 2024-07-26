@@ -24,3 +24,7 @@ Esta é a API para o aplicativo de Controle Financeiro, construída com Node.js,
    ```bash
    git clone https://github.com/seu-usuario/controle-financeiro-api.git
    cd controle-financeiro-api
+
+2. Instale as dependências:
+npm install
+

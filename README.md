@@ -26,5 +26,8 @@ Esta é a API para o aplicativo de Controle Financeiro, construída com Node.js,
    cd controle-financeiro-api
 
 2. Instale as dependências:
-   ```npm install
+   ```terminal
+   npm install
+
+   
 

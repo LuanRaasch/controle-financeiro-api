@@ -29,5 +29,19 @@ Esta é a API para o aplicativo de Controle Financeiro, construída com Node.js,
    ```terminal
    npm install
 
-   
+3. Configure as variáveis de ambiente: 
+   Crie um arquivo .env na raiz do projeto e adicione as seguintes variáveis:
+   ```
+   DB_HOST=localhost
+   DB_USER=seu-usuario
+   DB_PASSWORD=sua-senha
+   DB_NAME=controle_financeiro
+   SECRET_KEY=sua-chave-secreta
 
+4. Sincronize o banco de dados:
+   ```
+   npx sequelize-cli db:migrate
+
+5. Inicie o servidor:
+   ```
+   npm start

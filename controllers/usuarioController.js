@@ -2,15 +2,6 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const Usuario = require('../models/Usuario');
 
-// exports.criarUsuario = async (req, res) => {
-//   try {
-//     const usuario = await Usuario.create(req.body);
-//     res.status(201).json(usuario);
-//   } catch (error) {
-//     res.status(400).json({ error: error.message });
-//   }
-// };
-
 exports.criarUsuario = async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(req.body.senha, 10);
@@ -23,10 +14,11 @@ exports.criarUsuario = async (req, res) => {
 
 exports.atualizarUsuario = async (req, res) => {
   const { id } = req.params;
-  const { nome, email, senha } = req.body;
+  const { nome, email } = req.body;
 
   try {
-    const [updated] = await Usuario.update({nome, email, senha}, {
+    const hashedPassword = await bcrypt.hash(req.body.senha, 10);
+    const [updated] = await Usuario.update({nome, email, senha: hashedPassword}, {
       where: { id },
     });
 
